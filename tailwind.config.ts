@@ -8,27 +8,27 @@ export default {
       colors: {
         ...colors,
         primary: {
-          content: colors.indigo[900],
+          content: colors.stone[100],
+          DEFAULT: colors.stone[700],
           hover: {
-            content: colors.indigo[950],
-            DEFAULT: colors.stone[700],
+            content: colors.stone[50],
+            DEFAULT: colors.stone[900],
           },
-          DEFAULT: colors.stone[800],
         },
         secondary: {
-          content: colors.emerald[200],
-          DEFAULT: colors.emerald[900],
+          content: colors.emerald[100],
+          DEFAULT: colors.emerald[700],
           hover: {
-            content: colors.emerald[300],
-            DEFAULT: colors.emerald[800],
+            content: colors.emerald[50],
+            DEFAULT: colors.emerald[900],
           },
         },
         danger: {
-          content: colors.red[200],
-          DEFAULT: colors.red[900],
+          content: colors.red[100],
+          DEFAULT: colors.red[700],
           hover: {
-            content: colors.red[300],
-            DEFAULT: colors.red[950],
+            content: colors.red[50],
+            DEFAULT: colors.red[900],
           },
         },
         bg: {

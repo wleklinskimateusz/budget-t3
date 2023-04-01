@@ -5,7 +5,7 @@ import { api } from "~/utils/api";
 import { useSession } from "next-auth/react";
 import { NavBar } from "~/components/NavBar";
 import { getServerAuthSession } from "~/server/auth";
-import { LoggedUser } from "~/components/LoggedUser";
+import { Profile } from "~/components/LoggedUser";
 
 const Home: NextPage = () => {
   const categories = api.category.getAll.useQuery();
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex h-screen w-screen flex-col items-center justify-center bg-bg">
         <NavBar />
-        <LoggedUser user={user} />
+        <Profile user={user} />
       </main>
     </>
   );
@@ -31,7 +31,6 @@ const Home: NextPage = () => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getServerAuthSession(context);
   if (!session) {
-    console.log("Ej");
     return {
       redirect: {
         destination: "/login",

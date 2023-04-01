@@ -1,8 +1,10 @@
 import type { Session } from "next-auth";
 import type { FC } from "react";
 import Image from "next/image";
+import { Button } from "./Button";
+import { signOut } from "next-auth/react";
 
-export const LoggedUser: FC<Pick<NonNullable<Session>, "user">> = ({
+export const Profile: FC<Pick<NonNullable<Session>, "user">> = ({
   user: { name, image },
 }) => (
   <div className="flex flex-col items-center">
@@ -12,5 +14,8 @@ export const LoggedUser: FC<Pick<NonNullable<Session>, "user">> = ({
       </div>
     )}
     {name}
+    <Button size={"small"} onClick={() => void signOut()}>
+      Sign Out
+    </Button>
   </div>
 );
