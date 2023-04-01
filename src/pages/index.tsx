@@ -9,7 +9,6 @@ import { Profile } from "~/components/Profile";
 const Home: NextPage = () => {
   const { data: sessionData } = useSession();
   if (!sessionData) return null;
-  const user = sessionData.user;
 
   return (
     <>

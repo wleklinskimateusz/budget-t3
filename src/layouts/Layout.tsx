@@ -6,8 +6,8 @@ import { Profile } from "~/components/Profile";
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
   const session = useSession();
-  const user = session.data?.user;
   const router = useRouter();
+  const user = session.data?.user;
   if (!user) return <>{children}</>;
   if (router.pathname === "/login") {
     return <>{children}</>;
